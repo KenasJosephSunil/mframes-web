@@ -27,5 +27,15 @@
 <iframe class="pf-frame" src="https://kevin-portfolio-phi-six.vercel.app" loading="lazy" allow="autoplay; fullscreen"></iframe>
 
 <script src="site.js"></script>
+<script>
+(function(){
+  var c = document.getElementById('cursor');
+  if(!c) return;
+  var hide = function(){ c.style.opacity = '0'; };
+  document.addEventListener('mouseout', function(e){ if(!e.relatedTarget) hide(); });
+  window.addEventListener('blur', hide);
+  document.addEventListener('mousemove', function(){ c.style.opacity = '1'; });
+})();
+</script>
 </body>
 </html>
