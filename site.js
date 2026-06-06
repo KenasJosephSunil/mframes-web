@@ -99,3 +99,15 @@ if (form){
     if(!v.muted){ const p = v.play(); if(p && p.catch) p.catch(()=>{}); }
   });
 })();
+
+/* Featured film lightbox */
+(function(){
+  var lb=document.getElementById('ytLb'),embed=document.getElementById('ytEmbed'),x=document.getElementById('ytClose');
+  if(!lb||!embed)return;
+  function openYt(id){embed.innerHTML='<iframe src="https://www.youtube.com/embed/'+id+'?autoplay=1&rel=0&modestbranding=1&playsinline=1" title="Film" allow="autoplay; encrypted-media; fullscreen" allowfullscreen></iframe>';lb.classList.add('open');lb.setAttribute('aria-hidden','false');}
+  function closeYt(){lb.classList.remove('open');lb.setAttribute('aria-hidden','true');embed.innerHTML='';}
+  document.querySelectorAll('[data-yt]').forEach(function(el){el.addEventListener('click',function(){openYt(el.getAttribute('data-yt'));});});
+  if(x)x.addEventListener('click',closeYt);
+  lb.addEventListener('click',function(e){if(e.target===lb)closeYt();});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')closeYt();});
+})();
