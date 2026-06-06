@@ -404,3 +404,4 @@ footer{border-top:1px solid var(--line);padding:54px 0}
 .pf-card .pf-card-cta{font-family:"JetBrains Mono",monospace;font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;color:var(--acid);white-space:nowrap}
 .pf-card .pf-card-cta .ar{display:inline-block;transition:transform .3s var(--ease)}
 .pf-card:hover .pf-card-cta .ar{transform:translate(4px,-4px)}
+.ph-link{display:block}
