@@ -30,11 +30,15 @@
 <script>
 (function(){
   var c = document.getElementById('cursor');
-  if(!c) return;
+  var frame = document.querySelector('.pf-frame');
+  if(!c || !frame) return;
   var hide = function(){ c.style.opacity = '0'; };
-  document.addEventListener('mouseout', function(e){ if(!e.relatedTarget) hide(); });
-  window.addEventListener('blur', hide);
+  hide();
+  frame.addEventListener('mouseenter', function(){ hide(); try{ frame.contentWindow.postMessage('mf-cursor-show','*'); }catch(e){} });
+  frame.addEventListener('mouseleave', function(){ try{ frame.contentWindow.postMessage('mf-cursor-hide','*'); }catch(e){} });
   document.addEventListener('mousemove', function(){ c.style.opacity = '1'; });
+  document.documentElement.addEventListener('mouseleave', hide);
+  window.addEventListener('blur', hide);
 })();
 </script>
 </body>
