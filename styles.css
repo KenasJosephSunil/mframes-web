@@ -86,7 +86,7 @@ h1 .blk:nth-child(2) i{animation-delay:.12s}
 .clients{border-block:1px solid var(--line);padding:28px 0;background:var(--ink-2)}
 .clients .wrap{display:flex;align-items:center;gap:40px;flex-wrap:wrap;justify-content:space-between}
 .clients .lab{color:var(--muted);white-space:nowrap}
-.clients .logos{display:flex;gap:46px;flex-wrap:wrap;align-items:center;opacity:.7}
+.clients .logos{display:flex;gap:30px;flex-wrap:wrap;align-items:center;opacity:.7}
 .clients .logos b{font-family:"Fraunces",serif;font-weight:500;font-size:1.25rem;color:var(--bone-dim)}
 
 section.blk{padding:clamp(80px,11vw,150px) 0;position:relative;z-index:1}
