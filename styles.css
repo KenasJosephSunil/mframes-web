@@ -373,6 +373,9 @@ footer{border-top:1px solid var(--line);padding:54px 0}
 .films figcaption::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--acid);flex:none}
 @media(max-width:760px){.films{grid-template-columns:1fr;max-width:430px;margin-inline:auto}}
 .films.one{grid-template-columns:minmax(0,380px);justify-content:center}
+.vid-feature{grid-template-columns:minmax(0,720px);justify-content:center;margin-top:26px}
+.vid-pair{grid-template-columns:repeat(2,minmax(0,300px));justify-content:center;margin-top:18px}
+@media(max-width:760px){.vid-pair{grid-template-columns:minmax(0,340px)}}
 .team.two{grid-template-columns:repeat(2,1fr);max-width:860px}
 @media(max-width:680px){.team,.team.two{grid-template-columns:1fr;max-width:420px}}
 .hero-shot video{width:100%;height:100%;object-fit:cover;display:block;filter:contrast(1.04) brightness(.92)}
