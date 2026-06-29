@@ -2,26 +2,34 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Work — M Frames · Creative Production House</title>
-<meta name="description" content="Selected photography and film work from M Frames — sport, clubs and brands across the UAE and the Gulf." />
+<title>La Vue Café &amp; Boulangerie — Food &amp; Brand Film · Project — M Frames</title>
+<meta name="description" content="Food and brand storytelling for La Vue Café & Boulangerie — afternoon tea, breakfast service and a cinematic film, shot by M Frames for social, web and menu." />
 <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..800&family=Hanken+Grotesk:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
 <link rel="icon" href="img/favicon.png" />
 <link rel="stylesheet" href="styles.css" />
+<style>
+.reels{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin:8px 0;align-items:start}
+.reels figure{margin:0}
+.reels video{width:100%;height:auto;max-height:80vh;display:block;border:1px solid var(--line);border-radius:var(--r);background:#000}
+.reels figcaption{font-family:"JetBrains Mono",monospace;font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;color:var(--bone-dim);margin-top:13px;display:flex;align-items:center;gap:9px}
+.reels figcaption::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--acid);flex:none}
+@media(max-width:760px){.reels{grid-template-columns:1fr;max-width:460px;margin-inline:auto}}
+</style>
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="M Frames" />
-<meta property="og:title" content="Work — M Frames · Creative Production House" />
-<meta property="og:description" content="Selected photography and film work from M Frames — sport, clubs and brands across the UAE and the Gulf." />
-<meta property="og:url" content="https://mframes.studio/work.html" />
+<meta property="og:title" content="La Vue Café &amp; Boulangerie — Food &amp; Brand Film · Project — M Frames" />
+<meta property="og:description" content="Food and brand storytelling for La Vue Café & Boulangerie — afternoon tea, breakfast service and a cinematic film, shot by M Frames." />
+<meta property="og:url" content="https://mframes.studio/la-vue.html" />
 <meta property="og:image" content="https://mframes.studio/img/og-cover.jpg" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
 <meta property="og:image:alt" content="M Frames — Creative Production House" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Work — M Frames · Creative Production House" />
-<meta name="twitter:description" content="Selected photography and film work from M Frames — sport, clubs and brands across the UAE and the Gulf." />
+<meta name="twitter:title" content="La Vue Café &amp; Boulangerie — Food &amp; Brand Film · Project — M Frames" />
+<meta name="twitter:description" content="Food and brand storytelling for La Vue Café & Boulangerie — afternoon tea, breakfast service and a cinematic film, shot by M Frames." />
 <meta name="twitter:image" content="https://mframes.studio/img/og-cover.jpg" />
-<link rel="canonical" href="https://mframes.studio/work.html" />
+<link rel="canonical" href="https://mframes.studio/la-vue.html" />
 <meta name="theme-color" content="#0d0d12" />
 <script type="application/ld+json">
 {
@@ -54,6 +62,7 @@
 }
 </script>
 <meta name="google-site-verification" content="KUumf7dgUhij5nPJOiQT5msT2_h4BVWpeBZfWFdiGUM" />
+<link rel="preload" as="image" href="img/lavue/lv02.jpg" fetchpriority="high" />
 </head>
 <body>
 <div class="grain"></div>
@@ -70,42 +79,67 @@
 
 <section class="page-hero">
   <div class="wrap">
-    <div class="eyebrow" data-reveal><span class="ln"></span><span class="mono">Selected Work — Portfolio</span></div>
-    <h1 data-reveal data-d="1">Work that earns<br>a second <em style="font-style:italic;color:var(--acid)">look.</em></h1>
-    <p data-reveal data-d="2">A selection of our photography and film work across sport, clubs and brands — with more being added as new projects ship.</p>
+    <div class="eyebrow" data-reveal><span class="ln"></span><span class="mono">Project — Food · Brand Film</span></div>
+    <h1 data-reveal data-d="1">La Vue Café <em style="font-style:italic;color:var(--acid)">&amp; Boulangerie.</em></h1>
+    <p data-reveal data-d="2">Food and brand storytelling for La Vue Café &amp; Boulangerie — from the afternoon-tea ritual to the heat of the pass. A set of photography and a cinematic film, made to make people hungry.</p>
+    <div class="case-meta" data-reveal data-d="3">
+      <div class="cm"><span>Client</span><b>La Vue Café &amp; Boulangerie</b></div>
+      <div class="cm"><span>Location</span><b>Bahrain</b></div>
+      <div class="cm"><span>Services</span><b>Photography · Film · Creative Direction</b></div>
+      <div class="cm"><span>Year</span><b>2025</b></div>
+    </div>
   </div>
 </section>
 
-<section class="blk">
+<section class="blk" style="padding-top:clamp(30px,4vw,50px)">
   <div class="wrap">
-    <div class="work-grid">
-      <a class="work w-12" href="la-vue.html" data-reveal style="aspect-ratio:16/9"><img loading="lazy" src="img/lavue/lv04.jpg" alt="La Vue Café &amp; Boulangerie — Bahrain"/><span class="cnr tl"></span><span class="cnr br"></span><div class="meta"><div><span class="cat">Restaurants &amp; Cafés · Film</span><h3>La Vue Café &amp; Boulangerie</h3></div><span class="ar">↗︎</span></div></a>
-      <a class="work w-12" href="icons-of-porsche.html" data-reveal style="aspect-ratio:16/9"><img loading="lazy" src="img/porsche/iop-feature.jpg" alt="Icons of Porsche — UAE"/><span class="cnr tl"></span><span class="cnr br"></span><div class="meta"><div><span class="cat">Automotive · Event · Film</span><h3>Icons of Porsche — UAE</h3></div><span class="ar">↗︎</span></div></a>
-      <a class="work w-7" href="tennis-360.html" data-reveal><img loading="lazy" src="img/tennis/t07.jpg" alt="Tennis 360 — UAE"/><span class="cnr tl"></span><span class="cnr br"></span><div class="meta"><div><span class="cat">Photography · Film</span><h3>Tennis 360 — UAE</h3></div><span class="ar">↗︎</span></div></a>
-      <a class="work w-5" href="al-ahly.html" data-reveal data-d="1"><img loading="lazy" src="img/alahly/a01.jpg" alt="Al Ahly Club — UAE"/><span class="cnr tl"></span><span class="cnr br"></span><div class="meta"><div><span class="cat">Photography · Film</span><h3>Al Ahly Club — UAE</h3></div><span class="ar">↗︎</span></div></a>
-    </div>
-    <p class="note" data-reveal>More projects coming soon — automotive, sports, commercial and brand work in production.</p>
+    <div class="feature-img" data-reveal><img fetchpriority="high" src="img/lavue/lv02.jpg" alt="La Vue Café — breakfast spread on marble" /></div>
+  </div>
 </section>
 
-<section class="blk" style="padding-top:0" id="videos">
+<section class="blk" style="padding-top:0">
   <div class="wrap">
-    <div class="sec-head" data-reveal><span class="mono idx">[ Video ]</span><span class="mono">Selected films</span></div>
-    <div class="films vid-feature">
-      <figure data-reveal><video controls preload="metadata" playsinline poster="img/video/coach-poster.jpg"><source src="video/coach-monticelli.mp4" type="video/mp4" /></video><figcaption>Coach Manuel Monticelli</figcaption></figure>
+    <div class="intro-grid">
+      <p class="statement" data-reveal>A café is a feeling before it's a <em>menu.</em></p>
+      <div class="side" data-reveal data-d="2">We worked across the room and the kitchen to capture La Vue end to end — the afternoon-tea ritual, the plating, the light on marble — then cut a cinematic film in the spirit of the pass.<br><br>Photography and motion built to make people hungry, finished for social, web and the menu.</div>
     </div>
-    <div class="films vid-feature">
-      <figure data-reveal><video controls preload="metadata" playsinline poster="img/video/product-sleepy-owl-poster.jpg"><source src="video/product-sleepy-owl.mp4" type="video/mp4" /></video><figcaption>Product Videography</figcaption></figure>
+  </div>
+</section>
+
+<section class="blk" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head" data-reveal><span class="mono idx">[ Gallery ]</span><span class="mono">On the table</span></div>
+    <div class="gallery">
+      <div class="gphoto tall" data-reveal><img loading="lazy" src="img/lavue/lv01.jpg" alt="La Vue Café — afternoon tea tower" /></div>
+      <div class="gphoto wide" data-reveal data-d="1"><img loading="lazy" src="img/lavue/lv04.jpg" alt="La Vue Café — breakfast table" /></div>
+      <div class="gphoto" data-reveal><img loading="lazy" src="img/lavue/lv03.jpg" alt="La Vue Café — afternoon tea service" /></div>
+      <div class="gphoto" data-reveal data-d="1"><img loading="lazy" src="img/lavue/lv05.jpg" alt="La Vue Café — breakfast, overhead" /></div>
+      <div class="gphoto" data-reveal data-d="2"><img loading="lazy" src="img/lavue/lv06.jpg" alt="La Vue Café — omelette plate" /></div>
+      <div class="gphoto half" data-reveal><img loading="lazy" src="img/lavue/lv07.jpg" alt="La Vue Café — croissant on marble" /></div>
+      <div class="gphoto half" data-reveal data-d="1"><img loading="lazy" src="img/lavue/lv08.jpg" alt="La Vue Café — omelette, close up" /></div>
+      <div class="gphoto wide" data-reveal><img loading="lazy" src="img/lavue/lv09.jpg" alt="La Vue Café — bread basket and greens" /></div>
+      <div class="gphoto tall" data-reveal data-d="1"><img loading="lazy" src="img/lavue/lv10.jpg" alt="La Vue Café — croissant, juice and coffee" /></div>
+      <div class="gphoto" data-reveal><img loading="lazy" src="img/lavue/lv11.jpg" alt="La Vue Café — afternoon tea tier" /></div>
+      <div class="gphoto" data-reveal data-d="1"><img loading="lazy" src="img/lavue/lv12.jpg" alt="La Vue Café — breakfast, overhead" /></div>
+      <div class="gphoto" data-reveal data-d="2"><img loading="lazy" src="img/lavue/lv13.jpg" alt="La Vue Café — croissant and juice" /></div>
     </div>
-    <div class="films vid-pair">
-      <figure data-reveal><video controls preload="metadata" playsinline poster="img/video/dofa-poster.jpg"><source src="video/dofa.mp4" type="video/mp4" /></video><figcaption>DOFA</figcaption></figure>
-      <figure data-reveal data-d="1"><video controls preload="metadata" playsinline poster="img/video/agm-poster.jpg"><source src="video/event-agm.mp4" type="video/mp4" /></video><figcaption>Event — AGM</figcaption></figure>
+  </div>
+</section>
+
+<section class="blk" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head" data-reveal><span class="mono idx">[ Films ]</span><span class="mono">Motion from the shoot</span></div>
+    <div class="reels">
+      <figure data-reveal><video controls preload="metadata" playsinline poster="img/lavue/poster-the-bear.jpg"><source src="video/lavue-the-bear.mp4" type="video/mp4" /></video><figcaption>The Bear — brand film</figcaption></figure>
+      <figure data-reveal data-d="1"><video controls preload="metadata" playsinline poster="img/lavue/poster-afternoon-tea.jpg"><source src="video/lavue-afternoon-tea.mp4" type="video/mp4" /></video><figcaption>Afternoon tea</figcaption></figure>
+      <figure data-reveal data-d="2"><video controls preload="metadata" playsinline poster="img/lavue/poster-breakfast.jpg"><source src="video/lavue-breakfast.mp4" type="video/mp4" /></video><figcaption>Breakfast service</figcaption></figure>
     </div>
   </div>
 </section>
 
 <section class="cta">
   <div class="glow" style="width:520px;height:520px;background:rgba(205,164,91,.12);bottom:-220px;left:50%;transform:translateX(-50%)"></div>
-  <div class="wrap" style="position:relative;z-index:2"><span class="mono idx" style="color:var(--acid)" data-reveal>[ Your project next ]</span><h2 data-reveal data-d="1" style="margin-top:24px">Let's make<br>yours <em>stand out.</em></h2><p class="sub" data-reveal data-d="2">Whatever you need designed or shot — we'd love to hear about it.</p><a href="contact.html" class="btn" data-reveal data-d="3">Book a project ↗︎</a></div>
+  <div class="wrap" style="position:relative;z-index:2"><span class="mono idx" style="color:var(--acid)" data-reveal>[ Your project next ]</span><h2 data-reveal data-d="1" style="margin-top:24px">Hungry for<br>something <em>like this?</em></h2><p class="sub" data-reveal data-d="2">Restaurants, cafés and brands — we'll make your food and space look as good as they taste.</p><a href="contact.html" class="btn" data-reveal data-d="3">Book a project ↗︎</a></div>
 </section>
 
 <footer>
