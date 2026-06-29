@@ -9,35 +9,6 @@
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..800&family=Hanken+Grotesk:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
 <link rel="icon" href="img/favicon.png" />
 <link rel="stylesheet" href="styles.css" />
-<style id="scrub-css">
-.scrub{position:relative;height:480vh;background:var(--ink);z-index:1}
-.scrub-stage{position:absolute;top:0;left:0;width:100%;height:100svh;min-height:100vh;overflow:hidden;background:var(--ink);z-index:1}
-.scrub-stage.is-fixed{position:fixed;top:0}
-.scrub-stage.is-end{position:absolute;top:auto;bottom:0}
-.scrub-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;background:var(--ink)}
-@media (min-aspect-ratio:1/1){.scrub-video{object-fit:contain}}
-.scrub-vig{position:absolute;inset:0;pointer-events:none;z-index:2;
-  background:linear-gradient(180deg,rgba(8,8,10,.6) 0%,rgba(8,8,10,0) 20%,rgba(8,8,10,0) 50%,rgba(8,8,10,.8) 100%),
-  radial-gradient(125% 80% at 50% 48%,transparent 50%,rgba(8,8,10,.52) 100%)}
-.scrub-intro{position:absolute;inset:0;z-index:4;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:0 7vw;pointer-events:none}
-.scrub-intro .k{font-family:"JetBrains Mono",monospace;font-size:.7rem;letter-spacing:.34em;text-transform:uppercase;color:var(--acid);margin-bottom:18px}
-.scrub-intro h1{font-family:"Fraunces",serif;font-weight:300;font-size:clamp(2.1rem,6vw,4.4rem);line-height:1.02;letter-spacing:-.015em;color:var(--bone)}
-.scrub-intro h1 em{font-style:italic;color:var(--acid);font-weight:330}
-.scrub-hint{position:absolute;bottom:5.5vh;left:50%;transform:translateX(-50%);font-family:"JetBrains Mono",monospace;font-size:.64rem;letter-spacing:.26em;text-transform:uppercase;color:var(--bone-dim);animation:scrubBob 1.8s var(--ease) infinite}
-@keyframes scrubBob{0%,100%{transform:translate(-50%,0)}50%{transform:translate(-50%,7px)}}
-.scrub-cap{position:absolute;left:0;right:0;bottom:15vh;z-index:4;display:flex;justify-content:center;text-align:center;padding:0 7vw;opacity:0;transform:translateY(28px);will-change:opacity,transform;pointer-events:none}
-.scrub-cap h2{font-family:"Fraunces",serif;font-weight:300;font-size:clamp(1.7rem,4.8vw,3.5rem);line-height:1.06;letter-spacing:-.01em;color:var(--bone);max-width:17ch;text-shadow:0 2px 34px rgba(0,0,0,.55)}
-.scrub-cap h2 em{font-style:italic;color:var(--acid);font-weight:330}
-.scrub-outro{position:absolute;inset:0;z-index:4;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:0 7vw;opacity:0;will-change:opacity;pointer-events:none}
-.scrub-outro .k{font-family:"JetBrains Mono",monospace;font-size:.7rem;letter-spacing:.34em;text-transform:uppercase;color:var(--acid);margin-bottom:18px}
-.scrub-outro h2{font-family:"Fraunces",serif;font-weight:300;font-size:clamp(1.9rem,5vw,3.6rem);line-height:1.04;color:var(--bone);max-width:16ch}
-.scrub-outro p{margin-top:16px;color:var(--bone-dim);font-weight:300;font-size:clamp(.95rem,1.6vw,1.1rem)}
-.scrub-outro .cta{display:flex;flex-wrap:wrap;gap:14px;justify-content:center;margin-top:32px}
-.scrub-bar{position:absolute;left:0;bottom:0;height:2px;width:100%;background:rgba(236,232,224,.1);z-index:5}
-.scrub-bar i{display:block;height:100%;width:0;background:var(--acid);box-shadow:0 0 12px rgba(205,164,91,.6)}
-.scrub.rm{height:100svh}.scrub.rm .scrub-stage{position:relative}.scrub.rm .scrub-intro{opacity:1}
-@media (max-width:700px){.scrub{height:440vh}.scrub-cap{bottom:17vh}}
-</style>
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="M Frames" />
 <meta property="og:title" content="M Frames — Creative Production House · Bahrain · KSA · UAE" />
@@ -101,32 +72,6 @@
     <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
   </div>
 </header>
-
-<section class="scrub" id="film" aria-label="La Vue Cafe and Boulangerie - a brand film by M Frames">
-  <div class="scrub-stage">
-    <video class="scrub-video" muted playsinline preload="auto" poster="img/lavue-poster.jpg" disablepictureinpicture>
-      <source src="video/lavue-scrub.mp4" type="video/mp4" />
-    </video>
-    <div class="scrub-vig"></div>
-    <div class="scrub-intro" id="scrubIntro">
-      <span class="k">M Frames &middot; Brand Film</span>
-      <h1>Cinematic content.<br><em>Powerful stories.</em></h1>
-      <span class="scrub-hint" id="scrubHint">Scroll to play &darr;</span>
-    </div>
-    <div class="scrub-cap" data-from="0.09" data-to="0.20"><h2>Every brand begins with a <em>place.</em></h2></div>
-    <div class="scrub-cap" data-from="0.25" data-to="0.36"><h2>And the people who bring it to <em>life.</em></h2></div>
-    <div class="scrub-cap" data-from="0.41" data-to="0.52"><h2>Every detail, under <em>pressure.</em></h2></div>
-    <div class="scrub-cap" data-from="0.57" data-to="0.68"><h2>Crafted to be <em>remembered.</em></h2></div>
-    <div class="scrub-cap" data-from="0.73" data-to="0.83"><h2>This is how a story gets <em>told.</em></h2></div>
-    <div class="scrub-outro" id="scrubOutro">
-      <span class="k">Brand Film &middot; 2025</span>
-      <h2>La Vue Caf&eacute; &amp; Boulangerie</h2>
-      <p>Directed, shot &amp; cut by M Frames.</p>
-      <div class="cta"><a href="work.html" class="btn">View our work &nearr;</a><a href="contact.html" class="btn ghost">Start a project</a></div>
-    </div>
-    <div class="scrub-bar"><i id="scrubBar"></i></div>
-  </div>
-</section>
 
 <section class="hero" id="top">
   <div class="wrap"><div class="hero-grid">
@@ -268,58 +213,6 @@
     <div class="foot-meta">M Frames · Bahrain · Saudi Arabia · UAE · Worldwide<br><span id="yr"></span> — Creative Production House</div>
   </div>
 </footer>
-<script id="scrub-js">
-(function(){
-  var sec=document.getElementById('film'); if(!sec) return;
-  var v=sec.querySelector('.scrub-video');
-  var caps=[].slice.call(sec.querySelectorAll('.scrub-cap'));
-  var intro=document.getElementById('scrubIntro');
-  var outro=document.getElementById('scrubOutro');
-  var hint=document.getElementById('scrubHint');
-  var bar=document.getElementById('scrubBar');
-  var stage=sec.querySelector('.scrub-stage');
-  var dur=0, ticking=false;
-  var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  function clamp(x,a,b){return x<a?a:(x>b?b:x);}
-  if(reduce){
-    sec.classList.add('rm');
-    v.setAttribute('loop','');v.setAttribute('autoplay','');v.muted=true;
-    if(v.play){var pp=v.play();if(pp&&pp.catch)pp.catch(function(){});}
-    if(hint)hint.style.display='none';
-    return;
-  }
-  v.muted=true;try{v.pause();}catch(e){}
-  v.addEventListener('loadedmetadata',function(){dur=v.duration||24;update();});
-  if(v.readyState>=1&&v.duration){dur=v.duration;}
-  function prime(){try{var p=v.play();if(p&&p.then){p.then(function(){v.pause();}).catch(function(){});}else{v.pause();}}catch(e){}}
-  window.addEventListener('touchstart',prime,{once:true,passive:true});
-  window.addEventListener('click',prime,{once:true});
-  function capAlpha(p,from,to){var f=0.035;var a=clamp((p-(from-f))/f,0,1);var b=clamp(((to+f)-p)/f,0,1);return Math.min(a,b);}
-  function update(){
-    ticking=false;
-    var vh=window.innerHeight;
-    var rect=sec.getBoundingClientRect();
-    var total=sec.offsetHeight-vh;if(total<=0)total=1;
-    var p=clamp(-rect.top/total,0,1);
-    if(stage){
-      if(rect.top<=0 && rect.bottom>vh){stage.classList.add('is-fixed');stage.classList.remove('is-end');}
-      else if(rect.bottom<=vh){stage.classList.remove('is-fixed');stage.classList.add('is-end');}
-      else{stage.classList.remove('is-fixed');stage.classList.remove('is-end');}
-    }
-    if(dur){var t=p*(dur-0.05);if(Math.abs((v.currentTime||0)-t)>0.015){try{if(typeof v.fastSeek==='function')v.fastSeek(t);else v.currentTime=t;}catch(e){}}}
-    if(intro){var ia=clamp((0.085-p)/0.04,0,1);intro.style.opacity=ia;intro.style.transform='translateY('+(-(1-ia)*24)+'px)';}
-    if(hint){hint.style.opacity=clamp((0.05-p)/0.03,0,1);}
-    for(var i=0;i<caps.length;i++){var c=caps[i];var a=capAlpha(p,parseFloat(c.dataset.from),parseFloat(c.dataset.to));c.style.opacity=a;c.style.transform='translateY('+((1-a)*28)+'px)';}
-    if(outro){var oa=clamp((p-0.86)/0.045,0,1);outro.style.opacity=oa;outro.style.pointerEvents=oa>0.5?'auto':'none';}
-    if(bar)bar.style.width=(p*100).toFixed(2)+'%';
-  }
-  function onScroll(){if(!ticking){ticking=true;requestAnimationFrame(update);}}
-  window.addEventListener('scroll',onScroll,{passive:true});
-  window.addEventListener('resize',onScroll);
-  try{v.load();}catch(e){}
-  update();
-})();
-</script>
 <script src="site.js"></script>
 <a class="wa-float" href="https://wa.me/97334526231?text=Hello%20M%20Frames%2C%20I%27d%20like%20to%20discuss%20a%20project." target="_blank" rel="noopener" aria-label="Chat on WhatsApp"><svg viewBox="0 0 32 32"><path d="M16 .4C7.2.4 0 7.5 0 16.4c0 2.9.8 5.6 2.2 8.1L0 32l7.7-2c2.4 1.3 5.1 2 7.9 2h.4C24.8 32 32 24.8 32 16S24.8.4 16 .4zm0 28.8c-2.5 0-4.9-.7-7-1.9l-.5-.3-4.5 1.2 1.2-4.4-.3-.5a13 13 0 0 1-2-6.9C2.8 9.1 8.7 3.2 16 3.2S29.2 9.1 29.2 16.4 23.3 29.2 16 29.2zm7.3-9.6c-.4-.2-2.4-1.2-2.7-1.3-.4-.1-.6-.2-.9.2-.3.4-1 1.3-1.2 1.5-.2.3-.4.3-.8.1-.4-.2-1.7-.6-3.2-2-1.2-1-2-2.3-2.2-2.7-.2-.4 0-.6.2-.8l.6-.7c.2-.2.3-.4.4-.7.1-.3.1-.5 0-.7-.1-.2-.9-2.1-1.2-2.9-.3-.8-.6-.7-.9-.7h-.8c-.3 0-.7.1-1 .5-.4.4-1.4 1.3-1.4 3.3s1.4 3.8 1.6 4.1c.2.3 2.8 4.3 6.8 6 .9.4 1.7.6 2.3.8 1 .3 1.8.3 2.5.2.8-.1 2.3-1 2.7-1.9.3-.9.3-1.7.2-1.9-.1-.1-.4-.2-.8-.4z"/></svg></a>
 </body>
