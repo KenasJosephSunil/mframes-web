@@ -11,8 +11,11 @@
 <link rel="stylesheet" href="styles.css" />
 <style id="scrub-css">
 .scrub{position:relative;height:480vh;background:var(--ink);z-index:1}
-.scrub-stage{position:sticky;top:0;height:100svh;min-height:100vh;overflow:hidden;background:var(--ink)}
+.scrub-stage{position:absolute;top:0;left:0;width:100%;height:100svh;min-height:100vh;overflow:hidden;background:var(--ink);z-index:1}
+.scrub-stage.is-fixed{position:fixed;top:0}
+.scrub-stage.is-end{position:absolute;top:auto;bottom:0}
 .scrub-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;background:var(--ink)}
+@media (min-aspect-ratio:1/1){.scrub-video{object-fit:contain}}
 .scrub-vig{position:absolute;inset:0;pointer-events:none;z-index:2;
   background:linear-gradient(180deg,rgba(8,8,10,.6) 0%,rgba(8,8,10,0) 20%,rgba(8,8,10,0) 50%,rgba(8,8,10,.8) 100%),
   radial-gradient(125% 80% at 50% 48%,transparent 50%,rgba(8,8,10,.52) 100%)}
@@ -274,6 +277,7 @@
   var outro=document.getElementById('scrubOutro');
   var hint=document.getElementById('scrubHint');
   var bar=document.getElementById('scrubBar');
+  var stage=sec.querySelector('.scrub-stage');
   var dur=0, ticking=false;
   var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   function clamp(x,a,b){return x<a?a:(x>b?b:x);}
@@ -293,8 +297,15 @@
   function capAlpha(p,from,to){var f=0.035;var a=clamp((p-(from-f))/f,0,1);var b=clamp(((to+f)-p)/f,0,1);return Math.min(a,b);}
   function update(){
     ticking=false;
-    var total=sec.offsetHeight-window.innerHeight;if(total<=0)total=1;
-    var p=clamp(-sec.getBoundingClientRect().top/total,0,1);
+    var vh=window.innerHeight;
+    var rect=sec.getBoundingClientRect();
+    var total=sec.offsetHeight-vh;if(total<=0)total=1;
+    var p=clamp(-rect.top/total,0,1);
+    if(stage){
+      if(rect.top<=0 && rect.bottom>vh){stage.classList.add('is-fixed');stage.classList.remove('is-end');}
+      else if(rect.bottom<=vh){stage.classList.remove('is-fixed');stage.classList.add('is-end');}
+      else{stage.classList.remove('is-fixed');stage.classList.remove('is-end');}
+    }
     if(dur){var t=p*(dur-0.05);if(Math.abs((v.currentTime||0)-t)>0.015){try{if(typeof v.fastSeek==='function')v.fastSeek(t);else v.currentTime=t;}catch(e){}}}
     if(intro){var ia=clamp((0.085-p)/0.04,0,1);intro.style.opacity=ia;intro.style.transform='translateY('+(-(1-ia)*24)+'px)';}
     if(hint){hint.style.opacity=clamp((0.05-p)/0.03,0,1);}
