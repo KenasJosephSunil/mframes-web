@@ -8,6 +8,13 @@
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..800&family=Hanken+Grotesk:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
 <link rel="icon" href="img/favicon.png" />
 <link rel="stylesheet" href="styles.css" />
+<style>
+.filters{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 26px}
+.filters .chip{font-family:"JetBrains Mono",monospace;font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;padding:9px 17px;border:1px solid var(--line);border-radius:40px;color:var(--bone-dim);background:transparent;transition:color .3s,border-color .3s,background .3s;cursor:none}
+.filters .chip:hover{color:var(--bone);border-color:var(--bone-dim)}
+.filters .chip.active{color:var(--ink);background:var(--acid);border-color:var(--acid)}
+.work.is-hidden{display:none}
+</style>
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="M Frames" />
 <meta property="og:title" content="Work — M Frames · Creative Production House" />
@@ -78,11 +85,18 @@
 
 <section class="blk">
   <div class="wrap">
+    <div class="head-row" data-reveal style="margin-bottom:22px"><div class="sec-head" style="margin:0"><span class="mono idx">[ Projects ]</span><span class="mono">Browse by category</span></div></div>
+    <div class="filters" data-reveal>
+      <button type="button" class="chip active" data-filter="all">All</button>
+      <button type="button" class="chip" data-filter="sports">Sports</button>
+      <button type="button" class="chip" data-filter="automotive">Automotive</button>
+      <button type="button" class="chip" data-filter="restaurants">Restaurants &amp; Cafés</button>
+    </div>
     <div class="work-grid">
-      <a class="work w-12" href="la-vue.html" data-reveal style="aspect-ratio:16/9"><img loading="lazy" src="img/lavue/lv04.jpg" alt="La Vue Café &amp; Boulangerie — Bahrain"/><span class="cnr tl"></span><span class="cnr br"></span><div class="meta"><div><span class="cat">Restaurants &amp; Cafés · Film</span><h3>La Vue Café &amp; Boulangerie</h3></div><span class="ar">↗︎</span></div></a>
-      <a class="work w-12" href="icons-of-porsche.html" data-reveal style="aspect-ratio:16/9"><img loading="lazy" src="img/porsche/iop-feature.jpg" alt="Icons of Porsche — UAE"/><span class="cnr tl"></span><span class="cnr br"></span><div class="meta"><div><span class="cat">Automotive · Event · Film</span><h3>Icons of Porsche — UAE</h3></div><span class="ar">↗︎</span></div></a>
-      <a class="work w-7" href="tennis-360.html" data-reveal><img loading="lazy" src="img/tennis/t07.jpg" alt="Tennis 360 — UAE"/><span class="cnr tl"></span><span class="cnr br"></span><div class="meta"><div><span class="cat">Photography · Film</span><h3>Tennis 360 — UAE</h3></div><span class="ar">↗︎</span></div></a>
-      <a class="work w-5" href="al-ahly.html" data-reveal data-d="1"><img loading="lazy" src="img/alahly/a01.jpg" alt="Al Ahly Club — UAE"/><span class="cnr tl"></span><span class="cnr br"></span><div class="meta"><div><span class="cat">Photography · Film</span><h3>Al Ahly Club — UAE</h3></div><span class="ar">↗︎</span></div></a>
+      <a class="work w-12" href="la-vue.html" data-cat="restaurants" data-reveal style="aspect-ratio:16/9"><img loading="lazy" src="img/lavue/lv04.jpg" alt="La Vue Café &amp; Boulangerie — Bahrain"/><span class="cnr tl"></span><span class="cnr br"></span><div class="meta"><div><span class="cat">Restaurants &amp; Cafés · Film</span><h3>La Vue Café &amp; Boulangerie</h3></div><span class="ar">↗︎</span></div></a>
+      <a class="work w-12" href="icons-of-porsche.html" data-cat="automotive" data-reveal style="aspect-ratio:16/9"><img loading="lazy" src="img/porsche/iop-feature.jpg" alt="Icons of Porsche — UAE"/><span class="cnr tl"></span><span class="cnr br"></span><div class="meta"><div><span class="cat">Automotive · Event · Film</span><h3>Icons of Porsche — UAE</h3></div><span class="ar">↗︎</span></div></a>
+      <a class="work w-7" href="tennis-360.html" data-cat="sports" data-reveal><img loading="lazy" src="img/tennis/t07.jpg" alt="Tennis 360 — UAE"/><span class="cnr tl"></span><span class="cnr br"></span><div class="meta"><div><span class="cat">Photography · Film</span><h3>Tennis 360 — UAE</h3></div><span class="ar">↗︎</span></div></a>
+      <a class="work w-5" href="al-ahly.html" data-cat="sports" data-reveal data-d="1"><img loading="lazy" src="img/alahly/a01.jpg" alt="Al Ahly Club — UAE"/><span class="cnr tl"></span><span class="cnr br"></span><div class="meta"><div><span class="cat">Photography · Film</span><h3>Al Ahly Club — UAE</h3></div><span class="ar">↗︎</span></div></a>
     </div>
     <p class="note" data-reveal>More projects coming soon — automotive, sports, commercial and brand work in production.</p>
 </section>
@@ -122,6 +136,25 @@
   </div>
 </footer>
 <script src="site.js"></script>
+<script>
+(function(){
+  var chips=document.querySelectorAll('.filters .chip');
+  var works=document.querySelectorAll('.work-grid .work');
+  if(!chips.length||!works.length) return;
+  chips.forEach(function(chip){
+    chip.addEventListener('click',function(){
+      var f=chip.getAttribute('data-filter');
+      chips.forEach(function(c){c.classList.remove('active');});
+      chip.classList.add('active');
+      works.forEach(function(w){
+        var show=(f==='all'||w.getAttribute('data-cat')===f);
+        w.classList.toggle('is-hidden',!show);
+        if(show) w.classList.add('is-in');
+      });
+    });
+  });
+})();
+</script>
 <a class="wa-float" href="https://wa.me/97334526231?text=Hello%20M%20Frames%2C%20I%27d%20like%20to%20discuss%20a%20project." target="_blank" rel="noopener" aria-label="Chat on WhatsApp"><svg viewBox="0 0 32 32"><path d="M16 .4C7.2.4 0 7.5 0 16.4c0 2.9.8 5.6 2.2 8.1L0 32l7.7-2c2.4 1.3 5.1 2 7.9 2h.4C24.8 32 32 24.8 32 16S24.8.4 16 .4zm0 28.8c-2.5 0-4.9-.7-7-1.9l-.5-.3-4.5 1.2 1.2-4.4-.3-.5a13 13 0 0 1-2-6.9C2.8 9.1 8.7 3.2 16 3.2S29.2 9.1 29.2 16.4 23.3 29.2 16 29.2zm7.3-9.6c-.4-.2-2.4-1.2-2.7-1.3-.4-.1-.6-.2-.9.2-.3.4-1 1.3-1.2 1.5-.2.3-.4.3-.8.1-.4-.2-1.7-.6-3.2-2-1.2-1-2-2.3-2.2-2.7-.2-.4 0-.6.2-.8l.6-.7c.2-.2.3-.4.4-.7.1-.3.1-.5 0-.7-.1-.2-.9-2.1-1.2-2.9-.3-.8-.6-.7-.9-.7h-.8c-.3 0-.7.1-1 .5-.4.4-1.4 1.3-1.4 3.3s1.4 3.8 1.6 4.1c.2.3 2.8 4.3 6.8 6 .9.4 1.7.6 2.3.8 1 .3 1.8.3 2.5.2.8-.1 2.3-1 2.7-1.9.3-.9.3-1.7.2-1.9-.1-.1-.4-.2-.8-.4z"/></svg></a>
 </body>
 </html>
