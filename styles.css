@@ -445,3 +445,8 @@ footer{border-top:1px solid var(--line);padding:54px 0}
 .foot-social svg{width:19px;height:19px;fill:currentColor;display:block}
 
 @media (max-width:860px){.glow,.cursor{display:none}}
+.foot-eden{margin-top:32px;padding-top:24px;border-top:1px solid var(--line);display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap}
+.foot-eden .fe-label{font-family:"JetBrains Mono",monospace;font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
+.foot-eden .fe-mark{height:23px;width:auto;display:block;opacity:.95}
+.foot-eden .fe-meta{font-family:"JetBrains Mono",monospace;font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:var(--bone-dim)}
+@media(max-width:560px){.foot-eden{gap:10px}.foot-eden .fe-mark{height:21px}.foot-eden .fe-meta{font-size:.56rem}}
