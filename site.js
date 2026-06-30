@@ -28,10 +28,10 @@ if (form){
     e.preventDefault();
     const f = new FormData(form);
     const body = `Name: ${f.get('name')}%0D%0ACompany: ${f.get('company')}%0D%0AEmail: ${f.get('email')}%0D%0AService: ${f.get('service')}%0D%0ABudget: ${f.get('budget')}%0D%0A%0D%0A${f.get('message')}`;
-    window.location.href = `mailto:creative@mframes.studio?subject=Project enquiry — ${f.get('name')||'M Frames'}&body=${body}`;
+    window.location.href = `mailto:creative@mframes.studio?subject=Project enquiry - ${f.get('name')||'M Frames'}&body=${body}`;
   });
 }
-// image lightbox — click a screenshot to view it large, arrows / swipe to move
+// image lightbox - click a screenshot to view it large, arrows / swipe to move
 (function(){
   const imgs = Array.from(document.querySelectorAll('.browser .scr img, .gallery .gphoto img'));
   if (!imgs.length) return;
