@@ -455,4 +455,5 @@ footer{border-top:1px solid var(--line);padding:54px 0}
 .foot-eden .fe-label{font-family:"JetBrains Mono",monospace;font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
 .foot-eden .fe-mark{height:23px;width:auto;display:block;opacity:.95}
 .foot-eden .fe-meta{font-family:"JetBrains Mono",monospace;font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:var(--bone-dim)}
+.foot-eden .fe-addr{flex-basis:100%;font-family:"JetBrains Mono",monospace;font-size:.58rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-top:2px}
 @media(max-width:560px){.foot-eden{gap:10px}.foot-eden .fe-mark{height:21px}.foot-eden .fe-meta{font-size:.56rem}}
