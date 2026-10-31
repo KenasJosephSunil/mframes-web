@@ -24,14 +24,29 @@ if (fine && cur){
   bind();
   addEventListener('mouseleave',()=>cur.style.opacity='0'); addEventListener('mouseenter',()=>cur.style.opacity='1');
 } else if (cur){ cur.style.display='none'; }
-// contact form -> mailto (no backend needed)
+// The form opens an email draft; it does not confirm delivery.
 const form = document.getElementById('cform');
 if (form){
+  const sources = {
+    'photography': {label: 'Photography', page: 'Photography in Bahrain'},
+    'corporate-video': {label: 'Videography', page: 'Corporate video production in Bahrain'}
+  };
+  const serviceKey = new URLSearchParams(window.location.search).get('service');
+  const source = Object.prototype.hasOwnProperty.call(sources, serviceKey) ? sources[serviceKey] : null;
+  if (source) form.elements.service.value = source.label;
   form.addEventListener('submit', (e) => {
     e.preventDefault();
     const f = new FormData(form);
-    const body = `Name: ${f.get('name')}%0D%0ACompany: ${f.get('company')}%0D%0AEmail: ${f.get('email')}%0D%0AService: ${f.get('service')}%0D%0ABudget: ${f.get('budget')}%0D%0A%0D%0A${f.get('message')}`;
-    window.location.href = `mailto:creative@mframes.studio?subject=Project enquiry - ${f.get('name')||'M Frames'}&body=${body}`;
+    const body = [
+      `Name: ${f.get('name') || ''}`,
+      `Company: ${f.get('company') || ''}`,
+      `Email: ${f.get('email') || ''}`,
+      `Service: ${f.get('service') || ''}`,
+      `Enquiry source: ${source ? source.page : 'Website contact page'}`,
+      '', String(f.get('message') || '')
+    ].join('\r\n');
+    const subject = `Project enquiry - ${f.get('name') || 'M Frames'}`;
+    window.location.href = `mailto:creative@mframes.studio?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
   });
 }
 // image lightbox - click a screenshot to view it large, arrows / swipe to move
